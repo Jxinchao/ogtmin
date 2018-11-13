@@ -56,19 +56,6 @@ Page({
         });
       }
     });
-    wx.request({
-      url: 'http://node.itcnyz.com/ogtlist/list', //仅为示例，并非真实的接口地址
-      data: {
-        x: '',
-        y: ''
-      },
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      success(res) {
-        console.log(res.data)
-      }
-    })
   },
   footerTap: app.footerTap
 })

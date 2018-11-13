@@ -1,32 +1,98 @@
-<view >
-    <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
-        <view class="tab-item {{currentTab==0?'active':''}}"  data-current="0" bindtap="swichNav">健康</view>
-        <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">情感</view>
-        <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">职场</view>
-        <view class="tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="swichNav">育儿</view>
-        <view class="tab-item {{currentTab==4?'active':''}}" data-current="4" bindtap="swichNav">纠纷</view>
-        <view class="tab-item {{currentTab==5?'active':''}}" data-current="5" bindtap="swichNav">青葱</view>
-        <view class="tab-item {{currentTab==6?'active':''}}" data-current="6" bindtap="swichNav">全部</view>
-        <view class="tab-item {{currentTab==7?'active':''}}" data-current="7" bindtap="swichNav">其他</view>
-    </scroll-view>
-    <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab"
-     style="height:{{winHeight}}rpx">
-        <swiper-item wx:for="{{[0,1,2,3,4,5,6,7]}}">
-            <scroll-view scroll-y="true" class="scoll-h" >
-                <block wx:for="{{[1,2,3,4,5,6,7,8]}}" wx:key="*this">
-                    <view class="item-ans">
-                        <view class="avatar">
-                            <image class="img" src="http://ookzqad11.bkt.clouddn.com/avatar.png"></image>
-                        </view>
-                        <view class="expertInfo">
-                            <view class="name">欢颜</view>
-                            <view class="tag">知名情感博主</view>
-                            <view class="answerHistory">134个回答，2234人听过 </view>
-                        </view>
-                        <navigator url="/pages/askExpert/expertDetail" class="askBtn">问TA</navigator> 
-                    </view>
-                </block>
-            </scroll-view>
-        </swiper-item>
-    </swiper>
+<view>
+  <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
+    <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">快讯</view>
+    <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">推荐</view>
+    <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">健康</view>
+    <view class="tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="swichNav">养生</view>
+  </scroll-view>
+  <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{winHeight}}rpx">
+    <!-- 快讯 -->
+    <swiper-item>
+      <scroll-view scroll-y="true" class="scoll-h">
+        <block wx:key="*this">
+          <view class="item-ans">
+            <view class="item-time">
+              <icon type="waiting" size="8" color="#4675f9" /> 2018.11.05 09:59:26</view>
+            <view class="item-title">动态|比特大路回应：“比特大陆拖欠台积电3亿美元债务”为谣言</view>
+            <view class="item-text">Coningeek爆料称，比特大陆将不再从其主要的芯片供应上台机电处获取芯片，拖欠了台积点的资金约超3亿美元。对此，比特大陆回应称，Coningeek持续恶意对我司编造品格低下谣言，其内容没有任何可信度。</view>
+            <view class="item-icon">
+              <view class="item-share">
+                <icon type="download" size="13" color="#4675f9" /> 分享挖矿</view>
+              <view class="item-money">
+                <icon type="download" size="13" color="yellow" /> 剩余200.0000</view>
+            </view>
+          </view>
+        </block>
+      </scroll-view>
+    </swiper-item>
+    <!-- 推荐 -->
+    <swiper-item>
+      <scroll-view scroll-y="true" class="scoll-h">
+        <block wx:key="*this">
+          <view class="item-kx">
+            <view class="item-content">
+              <view class="item-title">俄罗斯提数字资产替代法案 交易所运营或需许可证</view>
+              <view class="item-icon">
+                <view class="item-share">
+                  <icon type="download" size="13" color="#4675f9" /> 分享挖矿
+                </view>
+                <view class="item-money">
+                  <icon type="download" size="13" color="yellow" /> 剩余200.0000 </view>
+              </view>
+              <view class="item-time">2018.11.05 08:00:10</view>
+            </view>
+            <view class="item-img">
+              <image src="../../images/listimg.jpg"></image>
+            </view>
+          </view>
+        </block>
+      </scroll-view>
+    </swiper-item>
+    <!-- 健康 -->
+    <swiper-item>
+      <scroll-view scroll-y="true" class="scoll-h">
+        <block wx:key="*this">
+           <view class="item-kx">
+            <view class="item-content">
+              <view class="item-title">俄罗斯提数字资产替代法案 交易所运营或需许可证</view>
+              <view class="item-icon">
+                <view class="item-share">
+                  <icon type="download" size="13" color="#4675f9" /> 分享挖矿
+                </view>
+                <view class="item-money">
+                  <icon type="download" size="13" color="yellow" /> 剩余200.0000 </view>
+              </view>
+              <view class="item-time">2018.11.05 08:00:10</view>
+            </view>
+            <view class="item-img">
+              <image src="../../images/listimg.jpg"></image>
+            </view>
+          </view>
+        </block>
+      </scroll-view>
+    </swiper-item>
+    <!-- 养生 -->
+    <swiper-item>
+      <scroll-view scroll-y="true" class="scoll-h">
+        <block wx:key="*this">
+           <view class="item-kx">
+            <view class="item-content">
+              <view class="item-title">俄罗斯提数字资产替代法案 交易所运营或需许可证</view>
+              <view class="item-icon">
+                <view class="item-share">
+                  <icon type="download" size="13" color="#4675f9" /> 分享挖矿
+                </view>
+                <view class="item-money">
+                  <icon type="download" size="13" color="yellow" /> 剩余200.0000 </view>
+              </view>
+              <view class="item-time">2018.11.05 08:00:10</view>
+            </view>
+            <view class="item-img">
+              <image src="../../images/listimg.jpg"></image>
+            </view>
+          </view>
+        </block>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
 </view>
